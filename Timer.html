@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <style>
+        *{
+            background-color: #212121;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .timer{
+            margin: 270px;
+        }
+        span{
+            font-size: 2.5rem;
+            display: block;
+            margin-top: 29px;
+            color: rgb(101, 101, 206);
+        }
+    </style>
+</head>
+<body>
+    <div class="timer">
+        <span class="date"></span>
+        <span class="clock"></span>
+    </div>
+</body>
+<script>
+    let date = document.querySelector(`.date`)
+    let clock = document.querySelector(`.clock`);
+    let dat = new Date()
+    date.innerHTML = `${dat.toLocaleDateString()}`
+    setInterval(() => {   
+        let time =  new Date() 
+        clock.innerHTML = `${time.toLocaleTimeString()}`
+    }, 1000);
+</script>
+</html>
